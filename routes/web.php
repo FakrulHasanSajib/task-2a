@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\ProductController;
 
 
 
@@ -15,6 +16,8 @@ Route::resource('tasks', TaskController::class);
 Route::put('/tasks/{task}/toggle-complete', [TaskController::class, 'toggleComplete'])->name('tasks.toggle');
 
 Route::resource('suppliers', SupplierController::class);
+
+Route::resource('products', ProductController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
